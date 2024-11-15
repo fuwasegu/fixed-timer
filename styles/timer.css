@@ -1,0 +1,91 @@
+.page-timer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-width: 280px;
+  border: 1px solid #e0e0e0;
+}
+
+.timer-display {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  color: #333;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.timer-controls button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#start-timer {
+  background: #4CAF50;
+  color: white;
+}
+
+#start-timer:hover {
+  background: #43a047;
+}
+
+#stop-timer {
+  background: #f44336;
+  color: white;
+}
+
+#stop-timer:hover {
+  background: #e53935;
+}
+
+#reset-timer {
+  background: #2196F3;
+  color: white;
+}
+
+#reset-timer:hover {
+  background: #1e88e5;
+}
+
+.timer-controls button:active {
+  transform: scale(0.95);
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .page-timer {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .timer-display {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+} 

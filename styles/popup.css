@@ -1,0 +1,53 @@
+.container {
+  width: 300px;
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.time-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.time-input input {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+}
+
+.templates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.templates button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+#create-timer, #remove-timer {
+  width: 100%;
+  padding: 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#remove-timer {
+  background: #f44336;
+  margin-top: 10px;
+} 

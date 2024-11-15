@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>タイマー設定</h2>
+    
+    <div class="time-input">
+      <input type="number" id="hours" min="0" max="23" value="0">
+      <span>時間</span>
+      <input type="number" id="minutes" min="0" max="59" value="0">
+      <span>分</span>
+      <input type="number" id="seconds" min="0" max="59" value="0">
+      <span>秒</span>
+    </div>
+
+    <div class="templates">
+      <button data-time="1">1分</button>
+      <button data-time="3">3分</button>
+      <button data-time="5">5分</button>
+      <button data-time="10">10分</button>
+      <button data-time="30">30分</button>
+      <button data-time="60">1時間</button>
+    </div>
+
+    <div id="timer-controls">
+      <button id="create-timer">タイマーを作成</button>
+      <button id="update-timer" style="display: none;">タイマーを更新</button>
+      <button id="remove-timer" style="display: none;">タイマーを削除</button>
+    </div>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+</html>
