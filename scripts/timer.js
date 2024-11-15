@@ -88,7 +88,37 @@ class PageTimer {
       this.timerElement = null;
     }
   }
+
+  async restoreState() {
+    try {
+      const { timers = {} } = await chrome.storage.local.get('timers');
+      const tabId = await this.getCurrentTabId();
+      
+      if (timers[tabId]) {
+        await chrome.scripting.insertCSS({
+          target: { tabId },
+          files: ['styles/timer.css']
+        });
+        
+        this.createTimer();
+        this.setTime(timers[tabId].totalSeconds);
+      }
+    } catch (error) {
+      console.error('Error restoring timer state:', error);
+    }
+  }
+
+  async getCurrentTabId() {
+    return new Promise((resolve) => {
+      chrome.runtime.sendMessage({ action: 'getCurrentTabId' }, (response) => {
+        resolve(response.tabId);
+      });
+    });
+  }
 }
 
 // グローバルインスタンスを作成
-window.pageTimer = new PageTimer(); 
+window.pageTimer = new PageTimer();
+
+// ページ読み込み時にタイマー状態を復元
+window.pageTimer.restoreState(); 
