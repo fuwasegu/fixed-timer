@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "ページ内タイマー",
+  "name": "FixedTimer",
   "version": "1.0",
   "description": "ウェブページ内に固定タイマーを表示するChrome拡張",
   "icons": {
